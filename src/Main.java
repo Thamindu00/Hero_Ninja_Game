@@ -1,9 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Ninja n1 = new Ninja("N1", 10);
-        Devil d1  = new Devil("D1", 10);
+        Ninja ninja1 = new Ninja("NINJA1", 10);
+        Devil devil1  = new Devil("DEVIL1", 10);
+        //attacking
+        devil1.attack(ninja1);
+        System.out.println();
 
+        //before the steal armor
+        System.out.println(ninja1.isHasArmor());
+        System.out.println();
+        //after the steal armor
+        devil1.stealArmor(ninja1);
+        System.out.println(ninja1.isHasArmor());
 
-        System.out.println(n1.isHasArmor());
+        System.out.println();
+        devil1.stealArmor(ninja1);
     }
 }
