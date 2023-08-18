@@ -8,13 +8,6 @@ public class Devil extends GameCharacter{
     }
 
     public void stealArmor(Ninja ninja){
-        if(ninja.isHasArmor()){
-            ninja.setHasArmor(false);
-            System.out.println(ninja.getName() + "'s armor stolen successfully");
-        }else{
-            System.out.println(ninja.getName() + " doesn't have an armor");
-        }
-        //ninja.setHasArmor(false);
-        //System.out.println(ninja.getName() + ": lose the armor");
+        ninja.loseArmor();
     }
 }

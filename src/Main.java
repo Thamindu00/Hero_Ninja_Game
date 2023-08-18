@@ -1,8 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Ninja ninja1 = new Ninja("NINJA1", 10);
+        Ninja ninja1 = new Ninja("NINJA1", 5);
         Devil devil1  = new Devil("DEVIL1", 10);
         //attacking
+        devil1.attack(ninja1);
+        devil1.attack(ninja1);
+        devil1.attack(ninja1);
+        devil1.attack(ninja1);
+        devil1.attack(ninja1);
         devil1.attack(ninja1);
         System.out.println();
 

@@ -17,8 +17,23 @@ public class Ninja extends GameCharacter{
     ///////////////////////////////////
 
     public void loseHealth(){
+        //when calling this method first should reduce the health by 1, cause main aim of this method is that
         this.setHealth(this.getHealth()-1); // passing arguments to setHealth setter method
-        System.out.println(this.getName() + ": health decreased to " + this.getHealth());
+        if (this.getHealth()==0){
+            System.out.println(this.getName() + " just died!");
+        }else if(this.getHealth() < 0){
+            System.out.println(this.getName() + " is already died!");
+        }else{
+            System.out.println(this.getName() + ": health decreased to " + this.getHealth());
+        }
     }
 
+    public void loseArmor() {
+        if(this.isHasArmor()){
+            this.setHasArmor(false); // dealing with same class objects, so we can put this keyword
+            System.out.println(this.getName() + "'s armor stolen successfully");
+        }else{
+            System.out.println(this.getName() + " doesn't have an armor");
+        }
+    }
 }
