@@ -3,7 +3,8 @@ public class Devil extends GameCharacter{
         super(name, health); // passing arguments' value to super constructor
     }
 
-    public void attack(Ninja ninja){//attacking to ninja by devil, so we should pass ninja as parameter
+    //attacking to ninja by devil, so we should pass ninja as parameter
+    public void attack(Ninja ninja){
         ninja.loseHealth();
     }
 
@@ -11,9 +12,9 @@ public class Devil extends GameCharacter{
         ninja.loseArmor();
     }
 
-    public void loseHealth(){
+    public void loseHealth(int decreaseAmount){ // Devil's loseHealth method
         //when calling this method first should reduce the health by 1, cause main aim of this method is that
-        this.setHealth(this.getHealth()-1); // passing arguments to setHealth setter method
+        this.setHealth(this.getHealth()-decreaseAmount); // passing arguments to setHealth setter method
         if (this.getHealth()==0){
             System.out.println(this.getName() + " just died!");
         }else if(this.getHealth() < 0){

@@ -1,4 +1,5 @@
-public class Ninja extends GameCharacter{
+//Abstract class can hold normal methods and abstract methods
+public abstract class Ninja extends GameCharacter{
     public Ninja(String name, int health) {
         super(name, health);
         this.hasArmor = true; // when creating ninja it has armor by default
@@ -17,8 +18,13 @@ public class Ninja extends GameCharacter{
     ///////////////////////////////////
 
     public void loseHealth(){
-        //when calling this method first should reduce the health by 1, cause main aim of this method is that
-        this.setHealth(this.getHealth()-1); // passing arguments to setHealth setter method
+
+        if (this.isHasArmor()){// to execute idf statement the condition should be true, that means ninjas should have an armor
+            this.setHealth(this.getHealth()-1); // passing arguments to setHealth setter method
+        }else{
+            this.setHealth(this.getHealth()-2);
+        }
+
         if (this.getHealth()==0){
             System.out.println(this.getName() + " just died!");
         }else if(this.getHealth() < 0){
@@ -37,7 +43,22 @@ public class Ninja extends GameCharacter{
         }
     }
 
-    public void attack(Devil devil){//attacking to devil by ninja, so we should pass devil as parameter
-        devil.loseHealth();
+    public abstract void attack(Devil devil);//attacking to devil by ninja, so we should pass devil as parameter
+    //-----------------------------------------------------------------------------------------------------------
+    public void gainArmor(){
+
+        if (this.getHealth()<=0){
+            System.out.println(this.getName() + " cannot gain armor as you are dead!");
+        } else {
+            if (this.isHasArmor()==false){
+                this.setHasArmor(true);
+                System.out.println(this.getName() + "'s armor gained back successfully");
+            } else {
+                System.out.println(this.getName() + " already has an armor");
+            }
+        }
+
     }
+
+
 }
